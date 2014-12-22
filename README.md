@@ -3,7 +3,7 @@ composer-custom-directory-installer
 
 A composer plugin, to install differenty types of composer packages in custom directories outside the default composer default installation path which is in the `vendor` folder.
 
-Based & heavily influenced by repository by @mnsami:
+Based & heavily influenced by repository by `mnsami`:
 https://github.com/mnsami/composer-custom-directory-installer
 (Moved outside of a fork due to slow or no maintenance by the original author.)
 
@@ -14,8 +14,8 @@ Installation
 
 ```
   "require":{
-    "php": ">=5.3",
-    "ideaconnect/composer-directory-installer": "1.0.*",
+    "php": ">=5.4",
+    "idct/composer-directory-installer": "1.0.*",
     "monolog/monolog": "*"
   }
 ```
@@ -58,5 +58,36 @@ defined tokens are:
 * `$package` - returns full package name.
 * `$vendor` - same as `$name` but works with the first part of the package name.
 
+Flags
+=====
+
+Dynamic path definitions support flags for manipulation of the target name. Flags are parsed in a chain from the left to the right therefore the order of them is important
+
+Currently supprted flags are:
+
+* `F` - capitalizes first letter.
+* `P` - changes all entries of a `_` or `-` followed by a character to only that character, capitalized.
+
+Usage:
+
+Flags should be entered after the flag variable followed by a pipe `|`.
+
+For example:
+
+```
+    "extra": {
+        "installer-paths": {
+            "./packages/{$name|FP}": ["sourcepackage/my_package1","sourcepackage/my_package2","sourcepackage/my_package3"]
+        }
+    },
+```
+
+will install the packages into folders:
+
+* `./packages/MyPackage1`
+* `./packages/MyPackage2`
+* `./packages/MyPackage3`
+
+As the flag `F` will make the first letter a capital letter and the flag `P` will remove all `_` (or `-`) and capitalize the following letter.
 
 

@@ -32,7 +32,7 @@ class LibraryInstaller extends BaseLibraryInstaller
                       $flags = array();
                       if(count($patternParts) > 1)
                       {
-                          $flags = (array)$patternParts[1];
+                          $flags = str_split($patternParts[1]);
                       }
                       switch($patternParts[0])
                       {
@@ -62,7 +62,11 @@ class LibraryInstaller extends BaseLibraryInstaller
                                   $value = ucfirst($value);
                                   break;
                               case 'P':
-                                  $value = preg_replace('/([_\-][a-zA-Z])/e',strtoupper('\\1'),$value);
+                                  $value = preg_replace_callback('/[_\-]([a-zA-Z])/',
+                                    function ($matches) {
+                                        return strtoupper($matches[1]);
+                                    },
+                                    $value);
                                   break;
                           }
 

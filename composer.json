@@ -1,6 +1,7 @@
 {
-  "name": "ideaconnect/composer-custom-directory",
+  "name": "idct/composer-custom-directory",
   "type": "composer-plugin",
+  "description":  "A composer plugin, to install differenty types of composer packages in custom directories outside the default composer default installation path which is in the `vendor` folder.",
   "license": "MIT",
   "keywords": ["composer", "composer-plugin", "composer-installer"],
   "authors": [
@@ -11,7 +12,7 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.3",
+    "php": ">=5.4",
     "composer-plugin-api": "*"
   },
   "autoload": {
