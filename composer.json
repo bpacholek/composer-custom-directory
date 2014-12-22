@@ -18,7 +18,7 @@
     "psr-0": {"Composer\\CustomDirectoryInstaller": "src/"}
   },
   "extra": {
-      "class": ["Composer\\CustomDirectoryInstaller\\LibraryPlugin", "Composer\\CustomDirectoryInstaller\\PearPlugin"],
+      "class": ["Composer\\CustomDirectoryInstaller\\LibraryPlugin"],
       "branch-alias": {
         "dev-master": "1.0.x-dev"
        }

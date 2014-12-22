@@ -52,6 +52,7 @@ will install packages provided in the list ("sourcepackage/package_A", "sourcepa
 * ./packages/package_B
 * ./packages/package_C
 
+
 - defined tokens are:
 
 * `$name` which will return the second part of the package name, after `/`. For example for `sourcepackage/package_A` it will be `package_A`. In case of missing parts will return `undefined`.
