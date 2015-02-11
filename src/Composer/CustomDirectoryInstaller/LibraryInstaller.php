@@ -97,7 +97,7 @@ class LibraryInstaller extends BaseLibraryInstaller
         $downloadPath = $this->getInstallPath($package);
         $extra = $this->composer->getPackage()->getExtra();
         if(isset($extra['redistribute']) && isset($extra['redistribute'][$name])) {
-            $rules = isset($extra['redistribute'][$name];
+            $rules = isset($extra['redistribute'][$name]);
             foreach($rules as $rule) {
                 $basePath = $downloadPath . "/" . $rule['path'];
                 if(file_exists($basePath)) {
