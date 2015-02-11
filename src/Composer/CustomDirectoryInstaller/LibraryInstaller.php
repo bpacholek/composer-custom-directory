@@ -92,17 +92,17 @@ class LibraryInstaller extends BaseLibraryInstaller
     {
         parent::installCode($package);
 
-        $name = $package->getNames();
+        $name = $package->getNames()[0];
 
         $downloadPath = $this->getInstallPath($package);
         $extra = $this->composer->getPackage()->getExtra();
         if(isset($extra['redistribute']) && isset($extra['redistribute'][$name])) {
-            $rules = isset($extra['redistribute'][$name]);
+            $rules = $extra['redistribute'][$name];
             foreach($rules as $rule) {
                 $basePath = $downloadPath . "/" . $rule['path'];
                 if(file_exists($basePath)) {
                     $destinationPath = $downloadPath . "/" . $rule['destination'];
-                    rename($basePath, $desinationPath);
+                    rename($basePath, $destinationPath);
                 }
             }
         }
