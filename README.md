@@ -5,7 +5,9 @@ A composer plugin, to install differenty types of composer packages in custom di
 
 Based & heavily influenced by repository by `mnsami`:
 https://github.com/mnsami/composer-custom-directory-installer
-(Moved outside of a fork due to slow or no maintenance by the original author.)
+(Moved outside of a fork due to slow or no maintenance by the original author.)  
+
+For the support of [composer/installers](https://github.com/composer/installers/) there is a forked version that add the support of this module on [wpbp/installers](https://github.com/WPBP/installers).
 
 Installation
 ------------
